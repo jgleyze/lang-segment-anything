@@ -6,7 +6,7 @@ from lang_sam.models.utils import DEVICE
 
 class GDINO:
     def build_model(self, ckpt_path: str | None = None, device=DEVICE):
-        model_id = "IDEA-Research/grounding-dino-base" if ckpt_path is None else ckpt_path
+        model_id = "IDEA-Research/grounding-dino-tiny" if ckpt_path is None else ckpt_path
         self.processor = AutoProcessor.from_pretrained(model_id)
         self.model = AutoModelForZeroShotObjectDetection.from_pretrained(model_id).to(
             device
